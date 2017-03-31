@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server.js",
-    "release": "webpack --config=webpack/base.js --release",
-    "debug": "webpack --config=webpack/base.js"
+    "build": "webpack --config=webpack/base.js --release"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
