@@ -18,17 +18,14 @@ export class Hoge extends React.Component {
     this.setState({
       time: this.state.time + 1
     });
-    setTimeout(this.countUp, 1000);
+    setTimeout(this.countUp, 333);
   }
 
   render(){
     return(
       <div className={styles.test}>
         <div>
-          Time!!!!!!!!: <span className={styles.bold}>{ this.state.time }</span>
-        </div>
-        <div>
-          Hello!
+          !Time!: <span className={styles.bold}>{ this.state.time }</span>
         </div>
       </div>
     );

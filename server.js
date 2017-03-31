@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
-const config = require('./webpack/base.js');
+const config = require('./webpack/development.js');
 
 config.entry.push(
   'webpack-dev-server/client?http://localhost:3000',
