@@ -33,6 +33,21 @@ module.exports = {
           'react-hot-loader',
           'babel-loader'
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              localIdentName: '[name]-[local]-[hash:base64:5]',
+              modules: true
+            }
+          },
+          'postcss-loader'
+        ]
       }
     ]
   }

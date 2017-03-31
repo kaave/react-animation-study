@@ -1,5 +1,7 @@
 import React from 'react';
 
+import styles from './hoge.css';
+
 export class Hoge extends React.Component {
   constructor(props){
     super(props);
@@ -21,9 +23,9 @@ export class Hoge extends React.Component {
 
   render(){
     return(
-      <div>
+      <div className={styles.test}>
         <div>
-          Time: { this.state.time }
+          Time!!!!!!!!: <span className={styles.bold}>{ this.state.time }</span>
         </div>
         <div>
           Hello!

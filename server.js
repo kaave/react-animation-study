@@ -10,8 +10,6 @@ config.entry.push(
 
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
-console.log(config);
-
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
