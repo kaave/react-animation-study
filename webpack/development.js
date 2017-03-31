@@ -6,14 +6,26 @@ const plugins = [
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': "'development'"
   }),
-  new webpack.LoaderOptionsPlugin({ debug: true })
+  new webpack.LoaderOptionsPlugin({ debug: true }),
+  new webpack.HotModuleReplacementPlugin()
 ];
 const devtool = 'cheap-module-eval-source-map';
 
 module.exports = Object.assign({}, base, {
   cache: true,
+  entry: base.entry.concat([
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server'
+  ]),
   plugins,
   devtool,
+  devServer: {
+    contentBase: 'client/',
+    publicPath: base.output.publicPath,
+    port: 3000,
+    hot: true,
+    historyApiFallback: true
+  },
   module: {
     rules: [
       {
