@@ -41,7 +41,8 @@ module.exports = Object.assign({}, base, {
               options: {
                 importLoaders: 1,
                 localIdentName: '[name]__[local]--[hash:base64:8]',
-                modules: true
+                modules: true,
+                minimize: true
               }
             },
             'postcss-loader'
