@@ -11,8 +11,8 @@ const plugins = [
   new webpack.LoaderOptionsPlugin({ debug: true }),
   new webpack.HotModuleReplacementPlugin(),
   new CopyWebpackPlugin([{
-    from: './src/index.html',
-    to: './index.html'
+    from: './client/index.html',
+    to: './'
   }], { copyUnmodified: true })
 ];
 const devtool = 'cheap-module-eval-source-map';

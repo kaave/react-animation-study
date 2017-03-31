@@ -1,7 +1,8 @@
 const
   webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  UglifyJSPlugin = require('uglify-js-plugin');
+  UglifyJSPlugin = require('uglify-js-plugin'),
+  CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const base = require('./base');
 
@@ -11,7 +12,11 @@ const plugins = [
   }),
   new webpack.LoaderOptionsPlugin({ debug: false }),
   new ExtractTextPlugin('app.css'),
-  UglifyJSPlugin
+  new UglifyJSPlugin(),
+  new CopyWebpackPlugin([{
+    from: './client/index.html',
+    to: './'
+  }], { copyUnmodified: true })
 ];
 const devtool = false;
 
