@@ -12,7 +12,7 @@ const plugins = [
 
 module.exports = {
   cache: DEBUG,
-  entry: './src/js/app.jsx',
+  entry: ['./src/js/app.jsx'],
   output: {
     path: path.join(__dirname, '../', 'client', 'assets'),
     filename: 'app.js',
@@ -29,7 +29,10 @@ module.exports = {
         test: /\.jsx?$/,
         // include: [path.resolve(__dirname, 'src/js')],
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: [
+          'react-hot-loader',
+          'babel-loader'
+        ]
       }
     ]
   }
