@@ -1,5 +1,7 @@
-const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const
+  webpack = require('webpack'),
+  ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  UglifyJSPlugin = require('uglify-js-plugin');
 
 const base = require('./base');
 
@@ -8,7 +10,8 @@ const plugins = [
     'process.env.NODE_ENV': "'production'"
   }),
   new webpack.LoaderOptionsPlugin({ debug: false }),
-  new ExtractTextPlugin('app.css')
+  new ExtractTextPlugin('app.css'),
+  UglifyJSPlugin
 ];
 const devtool = false;
 

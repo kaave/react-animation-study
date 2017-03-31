@@ -1,4 +1,6 @@
-const webpack = require('webpack');
+const
+  webpack = require('webpack'),
+  CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const base = require('./base');
 
@@ -7,7 +9,11 @@ const plugins = [
     'process.env.NODE_ENV': "'development'"
   }),
   new webpack.LoaderOptionsPlugin({ debug: true }),
-  new webpack.HotModuleReplacementPlugin()
+  new webpack.HotModuleReplacementPlugin(),
+  new CopyWebpackPlugin([{
+    from: './src/index.html',
+    to: './index.html'
+  }], { copyUnmodified: true })
 ];
 const devtool = 'cheap-module-eval-source-map';
 
@@ -20,7 +26,7 @@ module.exports = Object.assign({}, base, {
   plugins,
   devtool,
   devServer: {
-    contentBase: 'client/',
+    // contentBase: './client/',
     publicPath: base.output.publicPath,
     port: 3000,
     hot: true,
