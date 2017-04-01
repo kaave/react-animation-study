@@ -2,7 +2,7 @@ const
   path = require('path'),
   webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  UglifyJSPlugin = require('uglify-js-plugin'),
+  UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = require('./base');
