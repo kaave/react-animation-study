@@ -75,8 +75,6 @@ module.exports = Object.assign({}, config.webpack, {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
-              modules: true
             }
           },
           'postcss-loader'

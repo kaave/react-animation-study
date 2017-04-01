@@ -1,6 +1,7 @@
 import React from 'react';
+import BEMHelper from 'react-bem-helper';
 
-import styles from './hoge.css';
+import './hoge.css';
 
 export class Hoge extends React.Component {
   constructor (props){
@@ -23,9 +24,9 @@ export class Hoge extends React.Component {
 
   render (){
     return(
-      <div className={styles.test}>
+      <div className="hoge">
         <div>
-          COUNT: <span className={styles.bold}>{ this.state.time }</span>
+          COUNT: <span className="hoge__bold">{ this.state.time }</span>
         </div>
       </div>
     );

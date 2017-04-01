@@ -1,7 +1,8 @@
-.test {
+.hoge {
   font-size: 100px;
+
+  & .bold {
+    font-weight: 700;
+  }
 }
 
-.bold {
-  font-weight: 700;
-}

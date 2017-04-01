@@ -1,4 +1,12 @@
-module.exports = process.env.NODE_ENV === 'production' ?
-  require('./tools/postcss/production') :
-  require('./tools/postcss/development');
+module.exports = {
+  plugins: {
+    'postcss-import': {},
+    'postcss-cssnext': {
+      browsers: [
+        'last 2 versions',
+        'ie >= 11'
+      ]
+    }
+  }
+};
 

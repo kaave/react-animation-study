@@ -43,8 +43,6 @@ module.exports = Object.assign({}, config.webpack, {
               loader: 'css-loader',
               options: {
                 importLoaders: 1,
-                localIdentName: '[name]__[local]--[hash:base64:8]',
-                modules: true,
                 minimize: true
               }
             },
