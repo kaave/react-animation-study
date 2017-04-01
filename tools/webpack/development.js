@@ -13,7 +13,7 @@ const plugins = [
   new webpack.HotModuleReplacementPlugin(),
   ...config.views.map(filename => new HtmlWebpackPlugin({
     title: 'Sample webpack project: Debug',
-    template: `./client/${filename}.ejs`,
+    template: `${filename}.ejs`,
     filename: `${filename}.html`
   }))
 ];

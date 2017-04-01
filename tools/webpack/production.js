@@ -16,7 +16,7 @@ const plugins = [
   new UglifyJSPlugin(),
   ...config.views.map(filename => new HtmlWebpackPlugin({
     title: 'Sample webpack project',
-    template: `./client/${filename}.ejs`,
+    template: `${filename}.ejs`,
     filename: `${filename}.html`
   }))
 ];
