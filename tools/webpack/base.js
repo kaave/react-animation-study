@@ -3,10 +3,12 @@ const webpack = require('webpack');
 
 module.exports = {
   webpack: {
-    entry: ['./scripts/app.jsx'],
+    entry: {
+      app: ['./source/scripts/app.jsx']
+    },
     output: {
       path: path.join(__dirname, '../../build'),
-      filename: 'app.js',
+      filename: '[name].js',
       publicPath: '/'
     },
     resolve: {

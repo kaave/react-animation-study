@@ -13,18 +13,22 @@ const plugins = [
   new webpack.HotModuleReplacementPlugin(),
   ...config.views.map(filename => new HtmlWebpackPlugin({
     title: 'Sample webpack project: Debug',
-    template: `${filename}.ejs`,
+    template: `source/${filename}.ejs`,
     filename: `${filename}.html`
   }))
 ];
 const devtool = 'cheap-module-eval-source-map';
 
+const entry = {};
+Object.keys(config.webpack.entry).forEach(key => entry[key] = config.webpack.entry[key].concat([
+  'webpack-dev-server/client?http://localhost:3000',
+  'webpack/hot/only-dev-server'
+]));
+console.log(entry);
+
 module.exports = Object.assign({}, config.webpack, {
   cache: true,
-  entry: config.webpack.entry.concat([
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server'
-  ]),
+  entry,
   plugins,
   devtool,
   devServer: {

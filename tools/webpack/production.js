@@ -12,11 +12,11 @@ const plugins = [
     'process.env.NODE_ENV': "'production'"
   }),
   new webpack.LoaderOptionsPlugin({ debug: false }),
-  new ExtractTextPlugin('app.css'),
+  new ExtractTextPlugin('[name].css'),
   new UglifyJSPlugin(),
   ...config.views.map(filename => new HtmlWebpackPlugin({
     title: 'Sample webpack project',
-    template: `${filename}.ejs`,
+    template: `source/${filename}.ejs`,
     filename: `${filename}.html`
   }))
 ];
