@@ -25,7 +25,7 @@ export class Hoge extends React.Component {
     return(
       <div className={styles.test}>
         <div>
-          Count: <span className={styles.bold}>{ this.state.time }</span>
+          COUNT: <span className={styles.bold}>{ this.state.time }</span>
         </div>
       </div>
     );
