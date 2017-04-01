@@ -1,7 +1,8 @@
 const
   path = require('path'),
   webpack = require('webpack'),
-  HtmlWebpackPlugin = require('html-webpack-plugin');
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = require('./base');
 
@@ -16,7 +17,11 @@ const plugins = [
     inject: false,
     template: `source/${filename}.ejs`,
     filename: `${filename}.html`
-  }))
+  })),
+  new CopyWebpackPlugin(
+    [{ from: 'assets' }],
+    { ignore: ['.DS_Store'] }
+  )
 ];
 const devtool = 'cheap-module-eval-source-map';
 
@@ -25,7 +30,6 @@ Object.keys(config.webpack.entry).forEach(key => entry[key] = config.webpack.ent
   'webpack-dev-server/client?http://localhost:3000',
   'webpack/hot/only-dev-server'
 ]));
-console.log(entry);
 
 module.exports = Object.assign({}, config.webpack, {
   cache: true,
