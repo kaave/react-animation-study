@@ -1,8 +1,9 @@
 const
+  path = require('path'),
   webpack = require('webpack'),
-  CopyWebpackPlugin = require('copy-webpack-plugin');
+  HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const base = require('./base');
+const config = require('./base');
 
 const plugins = [
   new webpack.DefinePlugin({
@@ -10,24 +11,24 @@ const plugins = [
   }),
   new webpack.LoaderOptionsPlugin({ debug: true }),
   new webpack.HotModuleReplacementPlugin(),
-  new CopyWebpackPlugin([{
-    from: './client/index.html',
-    to: './'
-  }], { copyUnmodified: true })
+  ...config.views.map(filename => new HtmlWebpackPlugin({
+    title: 'Sample webpack project: Debug',
+    template: `./client/${filename}.ejs`,
+    filename: `${filename}.html`
+  }))
 ];
 const devtool = 'cheap-module-eval-source-map';
 
-module.exports = Object.assign({}, base, {
+module.exports = Object.assign({}, config.webpack, {
   cache: true,
-  entry: base.entry.concat([
+  entry: config.webpack.entry.concat([
     'webpack-dev-server/client?http://localhost:3000',
     'webpack/hot/only-dev-server'
   ]),
   plugins,
   devtool,
   devServer: {
-    // contentBase: './client/',
-    publicPath: base.output.publicPath,
+    publicPath: config.webpack.output.publicPath,
     port: 3000,
     hot: true,
     historyApiFallback: true
@@ -50,12 +51,16 @@ module.exports = Object.assign({}, base, {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              localIdentName: '[name]-[local]-[hash:base64:5]',
+              localIdentName: '[name]__[local]--[hash:base64:5]',
               modules: true
             }
           },
           'postcss-loader'
         ]
+      },
+      {
+        test: /\.ejs$/,
+        use: 'ejs-compiled-loader'
       }
     ]
   }

@@ -1,10 +1,11 @@
 const
+  path = require('path'),
   webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   UglifyJSPlugin = require('uglify-js-plugin'),
-  CopyWebpackPlugin = require('copy-webpack-plugin');
+  HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const base = require('./base');
+const config = require('./base');
 
 const plugins = [
   new webpack.DefinePlugin({
@@ -13,14 +14,15 @@ const plugins = [
   new webpack.LoaderOptionsPlugin({ debug: false }),
   new ExtractTextPlugin('app.css'),
   new UglifyJSPlugin(),
-  new CopyWebpackPlugin([{
-    from: './client/index.html',
-    to: './'
-  }], { copyUnmodified: true })
+  ...config.views.map(filename => new HtmlWebpackPlugin({
+    title: 'Sample webpack project',
+    template: `./client/${filename}.ejs`,
+    filename: `${filename}.html`
+  }))
 ];
 const devtool = false;
 
-module.exports = Object.assign({}, base, {
+module.exports = Object.assign({}, config.webpack, {
   cache: false,
   plugins,
   devtool,
@@ -48,6 +50,15 @@ module.exports = Object.assign({}, base, {
             'postcss-loader'
           ]
         })
+      },
+      {
+        test: /\.ejs$/,
+        use: {
+          loader: 'ejs-compiled-loader',
+          options: {
+            htmlmin: true
+          }
+        }
       }
     ]
   }
