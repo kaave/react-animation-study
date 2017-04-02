@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server",
+    "prebuild": "yarn run lint",
     "build": "NODE_ENV=production webpack",
-    "lint": "yarn run lint:scripts lint:styles",
+    "lint": "npm-run-all -p lint:scripts lint:styles",
     "lint:scripts": "eslint --ext .js,.jsx source/scripts/",
     "lint:styles": "stylelint source/**/*.css"
   },
@@ -33,6 +34,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
+    "npm-run-all": "^4.0.2",
     "postcss-cssnext": "^2.10.0",
     "postcss-import": "^9.1.0",
     "postcss-loader": "^1.3.3",
@@ -40,6 +42,7 @@
     "style-loader": "^0.16.1",
     "stylelint": "^7.10.0",
     "stylelint-config-standard": "^16.0.0",
+    "stylelint-webpack-plugin": "^0.7.0",
     "uglifyjs-webpack-plugin": "^0.4.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.2",
