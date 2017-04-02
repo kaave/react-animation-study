@@ -94,6 +94,9 @@ Temporary Items
 
 ### Manual ###
 
+# IntelliJ
+/.idea
+
 # flow-typed
 /flow-typed
 

@@ -11,7 +11,7 @@ const config = require('./base');
 
 const plugins = [
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': "'development'"
+    'process.env.NODE_ENV': '\'development\''
   }),
   new webpack.LoaderOptionsPlugin({ debug: true }),
   new webpack.HotModuleReplacementPlugin(),
@@ -43,10 +43,10 @@ const plugins = [
 const devtool = 'cheap-module-eval-source-map';
 
 const entry = {};
-Object.keys(config.webpack.entry).forEach(key => entry[key] = config.webpack.entry[key].concat([
+Object.keys(config.webpack.entry).forEach(key => (entry[key] = config.webpack.entry[key].concat([
   'webpack-dev-server/client?http://localhost:13000',
   'webpack/hot/only-dev-server'
-]));
+])));
 
 module.exports = Object.assign({}, config.webpack, {
   cache: true,
@@ -76,7 +76,7 @@ module.exports = Object.assign({}, config.webpack, {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 1,
+              importLoaders: 1
             }
           },
           'postcss-loader'
