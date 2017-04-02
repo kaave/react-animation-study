@@ -4,14 +4,12 @@ const
   BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   CopyWebpackPlugin = require('copy-webpack-plugin'),
-  StyleLintPlugin = require('stylelint-webpack-plugin');
+  StyleLintPlugin = require('stylelint-webpack-plugin'),
+  FlowtypePlugin = require('flowtype-loader/plugin');
 
 const config = require('./base');
 
 const plugins = [
-  new StyleLintPlugin({
-    files: ['source/**/*.css']
-  }),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': "'development'"
   }),
@@ -63,12 +61,6 @@ module.exports = Object.assign({}, config.webpack, {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: 'eslint-loader'
-      },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,

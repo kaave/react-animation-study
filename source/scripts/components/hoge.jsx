@@ -1,18 +1,14 @@
-import React from 'react';
+import { Component } from 'react';
 import BEMHelper from 'react-bem-helper';
 
 import './hoge.css';
 
-const classes = new BEMHelper({
-  name: 'hoge'
-});
+const classes = new BEMHelper({ name: 'hoge' });
 
-export class Hoge extends React.Component {
+export class Hoge extends Component {
   constructor (props) {
     super(props);
     this.state = { time: 0 };
-
-    this.countUp = this.countUp.bind(this);
   }
 
   componentDidMount () {
@@ -20,10 +16,8 @@ export class Hoge extends React.Component {
   }
 
   countUp () {
-    this.setState({
-      time: this.state.time + 1
-    });
-    setTimeout(this.countUp, 333);
+    this.setState({ time: this.state.time + 1 });
+    setTimeout(this.countUp.bind(this), 333);
   }
 
   render () {
