@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint --ext .js,.jsx source/scripts/",
     "start": "NODE_ENV=development webpack-dev-server",
-    "build": "NODE_ENV=production webpack"
+    "build": "NODE_ENV=production webpack",
+    "lint": "yarn run lint:scripts",
+    "lint:scripts": "eslint --ext .js,.jsx source/scripts/"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
@@ -22,6 +23,7 @@
     "ejs-compiled-loader": "^1.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
+    "eslint-loader": "^1.7.1",
     "eslint-plugin-flowtype": "^2.30.4",
     "eslint-plugin-flowtype-errors": "^3.0.3",
     "eslint-plugin-import": "^2.2.0",
