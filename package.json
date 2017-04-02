@@ -17,6 +17,7 @@
     "browser-sync-webpack-plugin": "^1.1.4",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
+    "del": "^2.2.2",
     "ejs-compiled-loader": "^1.1.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",

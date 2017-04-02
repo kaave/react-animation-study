@@ -1,5 +1,6 @@
 const
   path = require('path'),
+  del = require('del'),
   webpack = require('webpack'),
   ExtractTextPlugin = require('extract-text-webpack-plugin'),
   UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
@@ -22,6 +23,10 @@ const plugins = [
   }))
 ];
 const devtool = false;
+
+const buildPath = ['build'];
+del.sync(buildPath);
+console.log(`--- Delete: ${buildPath} ---`);
 
 module.exports = Object.assign({}, config.webpack, {
   cache: false,
@@ -96,5 +101,4 @@ module.exports = Object.assign({}, config.webpack, {
     ]
   }
 });
-
 
