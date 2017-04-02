@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "flow-typed install",
+    "prestart": "yarn run lint",
     "start": "NODE_ENV=development webpack-dev-server",
     "prebuild": "yarn run lint",
     "build": "NODE_ENV=production webpack",

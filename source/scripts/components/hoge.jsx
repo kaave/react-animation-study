@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import BEMHelper from 'react-bem-helper';
 
 import './hoge.css';

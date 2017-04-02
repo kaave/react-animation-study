@@ -2,18 +2,18 @@
 @import './modules/variables.css';
 
 html {
-  font-size: 62.5%;
-  background-color: var(--mainColor);
+    font-size: 62.5%;
+    background-color: var(--mainColor);
 }
 
 body {
-  font-size: 1.4em;
-  color: var(--textColor);
+    font-size: 1.4em;
+    color: var(--textColor);
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
