@@ -93,4 +93,10 @@ Temporary Items
 # End of https://www.gitignore.io/api/node,osx
 
 ### Manual ###
+
+# flow-typed
+/flow-typed
+
+# build files
 /build
+
