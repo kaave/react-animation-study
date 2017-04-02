@@ -5,8 +5,8 @@ module.exports = {
   webpack: {
     entry: {
       app: [
-        './source/scripts/app.js',
-        './source/styles/app.css'
+        './source/styles/app.css',
+        './source/scripts/app.js'
       ]
     },
     output: {
