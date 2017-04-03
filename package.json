@@ -15,7 +15,7 @@
         "lint": "npm-run-all -p typecheck lint:scripts lint:styles",
         "lint:scripts": "eslint --ext .js,.jsx source/scripts/",
         "lint:scripts:fix": "eslint --fix --ext .js,.jsx source/scripts/",
-        "lint:styles": "stylelint source/**/*.css",
+        "lint:styles": "stylelint 'source/**/*.css'",
         "test": "NODE_ENV=test ava",
         "test:watch": "NODE_ENV=test ava --watch",
         "typecheck": "flow",
