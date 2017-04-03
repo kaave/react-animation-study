@@ -23,14 +23,14 @@
     },
     "ava": {
         "files": [
-            "./source/scripts/**/*.test.{js,jsx}"
+            "source/scripts/**/*.test.{js,jsx}"
         ],
         "source": [
-            "./source/scripts/**/*.{js,jsx}"
+            "source/scripts/**/*.{js,jsx}"
         ],
         "require": [
-          "babel-register",
-          "./source/scripts/_test-helper.js"
+            "babel-register",
+            "./source/scripts/_test-helper.js"
         ],
         "babel": "inherit"
     },
@@ -63,7 +63,7 @@
         "extract-text-webpack-plugin": "^2.1.0",
         "file-loader": "^0.11.1",
         "flow-bin": "^0.42.0",
-        "flow-types": "^1.0.0",
+        "flow-typed": "^2.0.0",
         "flowtype-loader": "^0.2.2",
         "html-webpack-plugin": "^2.28.0",
         "http-server": "^0.9.0",

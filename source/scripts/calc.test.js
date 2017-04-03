@@ -12,3 +12,4 @@ test('asyncSum', async t => {
   t.is(await calc.asyncSum(3, 4), 7);
   t.is(await calc.asyncSum(-5, 4), -1);
 });
+
