@@ -32,10 +32,6 @@ const devtool = false;
 const entry = {};
 Object.keys(config.webpack.entry).forEach(key => (entry[key] = config.webpack.entry[key].concat(['babel-polyfill'])));
 
-const buildPath = ['build'];
-del.sync(buildPath);
-console.log(`--- Delete: ${buildPath} ---`);
-
 module.exports = Object.assign({}, config.webpack, {
   cache: false,
   entry,
