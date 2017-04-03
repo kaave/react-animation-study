@@ -1,8 +1,47 @@
 {
-    "presets": [
-        "flow",
-        "env",
-        "stage-0",
-        "react"
-    ]
+    "env": {
+        "development": {
+            "presets": [
+                "flow",
+                ["env", { "targets": { "browsers": "last 2 versions" } }],
+                "stage-0",
+                "react"
+            ],
+            "plugins": [
+                "lodash",
+                "date-fns"
+            ]
+        },
+        "production": {
+            "presets": [
+                "flow",
+                ["env", {
+                    "targets": {
+                        "browsers": "last 2 versions",
+                        "uglify": true
+                    },
+                    "modules": false,
+                    "useBuiltIns": true
+                }],
+                "stage-0",
+                "react"
+            ],
+            "plugins": [
+                "lodash",
+                "date-fns"
+            ]
+        },
+        "test": {
+            "presets": [
+                "flow",
+                ["env", { "targets": { "browsers": "last 2 versions" } }],
+                "stage-0",
+                "react"
+            ],
+            "plugins": [
+                "lodash",
+                "date-fns"
+            ]
+        }
+    }
 }
