@@ -24,7 +24,7 @@ export class Hoge extends Component {
     return (
       <div {...classes()}>
         <div>
-          COUNT: <span {...classes('bold')}>{ this.state.time }</span>
+          <span className="fa fa-heart" /> COUNT: <span {...classes('bold')}>{ this.state.time }</span>
         </div>
       </div>
     );

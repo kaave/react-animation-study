@@ -1,4 +1,6 @@
 @import '../../node_modules/sanitize.css/sanitize.css';
+$fa-font-path: '../../node_modules/font-awesome/fonts';
+@import '../../node_modules/font-awesome/scss/font-awesome';
 @import './modules/variables';
 
 html {
