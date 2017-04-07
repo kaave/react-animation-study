@@ -70,7 +70,7 @@ module.exports = Object.assign({}, config.webpack, {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/,
         use: [
           'style-loader',
           {
@@ -79,7 +79,8 @@ module.exports = Object.assign({}, config.webpack, {
               importLoaders: 1
             }
           },
-          'postcss-loader'
+          'postcss-loader',
+          'sass-loader'
         ]
       },
       {

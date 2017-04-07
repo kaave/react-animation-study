@@ -45,7 +45,7 @@ module.exports = Object.assign({}, config.webpack, {
         use: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -56,7 +56,8 @@ module.exports = Object.assign({}, config.webpack, {
                 minimize: true
               }
             },
-            'postcss-loader'
+            'postcss-loader',
+            'sass-loader'
           ]
         })
       },

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BEMHelper from 'react-bem-helper';
 
-import './hoge.css';
+import './hoge.scss';
 
 const classes = new BEMHelper({ name: 'hoge' });
 
