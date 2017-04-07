@@ -70,7 +70,7 @@ module.exports = Object.assign({}, config.webpack, {
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/,
         use: [
           'style-loader',
           {
@@ -79,47 +79,11 @@ module.exports = Object.assign({}, config.webpack, {
               importLoaders: 1
             }
           },
-          'postcss-loader'
+          'postcss-loader',
+          'sass-loader'
         ]
       },
-      {
-        test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: 'application/font-woff'
-          }
-        }
-      },
-      {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: 'application/octet-stream'
-          }
-        }
-      },
-      {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        use: 'file-loader'
-      },
-      {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: 'image/svg+xml'
-          }
-        }
-      },
-      {
-        test: /\.ejs$/,
-        use: 'ejs-compiled-loader'
-      }
+      ...config.loaders
     ]
   }
 });

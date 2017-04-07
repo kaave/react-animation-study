@@ -1,5 +1,5 @@
 module.exports = {
-  extends: 'stylelint-config-standard',
+  extends: 'stylelint-config-sass-guidelines',
   ignoreFiles: [
     'node_modules/**/*'
   ],
@@ -17,6 +17,8 @@ module.exports = {
     // ネストの深さはこんくらい？
     'max-nesting-depth': 5,
     // BEMにマッチさせるのが難しいので無効
-    'selector-class-pattern': null
+    'selector-class-pattern': null,
+    // アルファベット順に並べましょう、だなんて面倒だし意味ごとにまとめたいこともあるので無効
+    'order/declaration-block-properties-alphabetical-order': null
   }
 };

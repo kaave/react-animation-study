@@ -1,0 +1,19 @@
+@import '../../node_modules/sanitize.css/sanitize.css';
+@import './modules/variables';
+
+html {
+    font-size: 62.5%;
+    background-color: $main-color;
+}
+
+body {
+    font-size: 1.4em;
+    color: $text-color;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
