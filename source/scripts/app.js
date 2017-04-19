@@ -1,3 +1,8 @@
+//@flow
+
 import renderer from './utils/renderer.jsx';
 
-renderer({ element: document.getElementById('root') });
+const mountElement = document.getElementById('root');
+if (mountElement) {
+  renderer({ element: mountElement });
+}

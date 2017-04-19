@@ -98,6 +98,14 @@
         "jsx-a11y/href-no-hash": "off",
 
         /*
+         * React
+         */
+        // reactコンポーネントのメソッド順を強制 無効化 flowtypeと相性が悪い
+        "react/sort-comp": "off",
+        // 1ファイルに複数のコンポーネントを定義させない 無効化 やりたいこともある
+        "react/no-multi-comp": "off",
+
+        /*
          * 主にサーバ向け
          */
         // use-strictの諸々の指定 無効化 色々と面倒が多い・・・
