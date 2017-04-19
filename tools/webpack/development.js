@@ -16,7 +16,6 @@ const plugins = [
   new webpack.LoaderOptionsPlugin({ debug: true }),
   new webpack.HotModuleReplacementPlugin(),
   ...config.views.map(filename => new HtmlWebpackPlugin({
-    title: 'Sample webpack project: Debug',
     inject: false,
     template: `source/${filename}.ejs`,
     filename: `${filename}.html`

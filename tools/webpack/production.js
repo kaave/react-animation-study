@@ -21,7 +21,6 @@ const plugins = [
   new ExtractTextPlugin('[name].css'),
   new UglifyJSPlugin(),
   ...config.views.map(filename => new HtmlWebpackPlugin({
-    title: 'Sample webpack project',
     inject: false,
     minify: {
       html5: true,
