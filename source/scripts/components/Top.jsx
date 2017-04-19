@@ -11,7 +11,7 @@ export default function Top ({ handleClick }: props) {
   return (
     <div className="top">
       <button className="top__button" onClick={handleClick}>
-        <span className="fa fa-diamond" /> 遷移 <span className="fa fa-diamond" />
+        <span className="fa fa-diamond" /> 遷移(予定) <span className="fa fa-diamond" />
       </button>
     </div>
   );
