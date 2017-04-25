@@ -6,7 +6,8 @@ import './Main.scss';
 import Top from './Top.jsx';
 
 type props = {
-  handleClick: () => void,
+  handleButtonClick: () => void,
+  handleGridClick: () => void,
   isGridOpened: boolean
 };
 
