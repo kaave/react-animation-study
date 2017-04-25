@@ -15,10 +15,12 @@ const initialState: state = {
 
 class Renderer extends Component {
   handleButtonClick: () => void;
+  handleGridClick: () => void;
 
   constructor (props: {}) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleGridClick = this.handleGridClick.bind(this);
     this.state = initialState;
   }
 
@@ -28,8 +30,14 @@ class Renderer extends Component {
     }));
   }
 
+  handleGridClick (_event: Event) {
+    this.setState(Object.assign({}, this.state, {
+      isGridOpened: false
+    }));
+  }
+
   render () {
-    return <Main {...this.state} handleClick={this.handleButtonClick} />;
+    return <Main {...this.state} handleButtonClick={this.handleButtonClick} handleGridClick={this.handleGridClick} />;
   }
 }
 

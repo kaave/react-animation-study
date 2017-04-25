@@ -6,7 +6,8 @@ import './Top.scss';
 import Grid from './Grid.jsx';
 
 type props = {
-  handleClick: () => void,
+  handleButtonClick: () => void,
+  handleGridClick: () => void,
   isGridOpened: boolean
 };
 
@@ -17,16 +18,15 @@ const grids = [
   'エスパルス曲線'
 ];
 
-export default function Top ({ handleClick, isGridOpened }: props) {
+export default function Top ({ handleButtonClick, handleGridClick, isGridOpened }: props) {
   return (
     <div className="top">
-      {isGridOpened ? (
-        <Grid grids={grids} />
-      ) : (
-        <button className="top__button" onClick={handleClick}>
+      {!isGridOpened && (
+        <button className="top__button" onClick={handleButtonClick}>
           <span className="fa fa-diamond" /> 遷移(予定) <span className="fa fa-diamond" />
         </button>
       )}
+      <Grid isOpened={isGridOpened} grids={grids} handleClick={handleGridClick} />
     </div>
   );
 }

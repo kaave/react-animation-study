@@ -17,7 +17,7 @@
             left: solid 1px #f0f0f0;
             right: solid 1px #f0f0f0;
         }
-        transition: width 0.3s ease-out;
+        cursor: pointer;
 
         &--1 {
             left: 0;
@@ -39,4 +39,26 @@
             background-color: rgba(#fd4, 0.3);
         }
     }
+}
+
+.grid-fade {
+    &-enter {
+        animation: fade-in 0.5s ease-out;
+    }
+
+    &-leave {
+        animation: fade-out 0.5s ease-out;
+    }
+}
+
+@keyframes fade-in {
+    0% { width: 0; }
+    50% { width: 0; }
+    100% { width: 25%; }
+}
+
+@keyframes fade-out {
+    0% { width: 25%; }
+    50% { width: 25%; }
+    100% { width: 0; }
 }
