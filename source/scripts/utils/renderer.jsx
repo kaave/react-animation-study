@@ -3,7 +3,15 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import Top from '../components/Main.jsx';
+import Main from '../components/Main.jsx';
+
+type state = {
+  isGridOpened: boolean
+};
+
+const initialState: state = {
+  isGridOpened: false
+};
 
 class Renderer extends Component {
   handleButtonClick: () => void;
@@ -11,14 +19,17 @@ class Renderer extends Component {
   constructor (props: {}) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.state = initialState;
   }
 
   handleButtonClick (_event: Event) {
-    console.log('Button clicked');
+    this.setState(Object.assign({}, this.state, {
+      isGridOpened: true
+    }));
   }
 
   render () {
-    return <Top handleClick={this.handleButtonClick} />;
+    return <Main {...this.state} handleClick={this.handleButtonClick} />;
   }
 }
 

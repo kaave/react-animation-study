@@ -6,13 +6,14 @@ import './Main.scss';
 import Top from './Top.jsx';
 
 type props = {
-  handleClick: () => void;
+  handleClick: () => void,
+  isGridOpened: boolean
 };
 
-export default function Main ({ handleClick }: props) {
+export default function Main (mainProps: props) {
   return (
     <main id="main" className="main" role="main">
-      <Top handleClick={handleClick} />
+      <Top {...mainProps} />
     </main>
   );
 }

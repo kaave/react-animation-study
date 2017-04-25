@@ -1,0 +1,42 @@
+.grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+
+    &__list {
+        display: inline-block;
+        position: absolute;
+        width: 25%;
+        height: 100%;
+        top: 0;
+        overflow: hidden;
+        border: {
+            left: solid 1px #f0f0f0;
+            right: solid 1px #f0f0f0;
+        }
+        transition: width 0.3s ease-out;
+
+        &--1 {
+            left: 0;
+            background-color: rgba(#f41, 0.3);
+        }
+
+        &--2 {
+            left: 25%;
+            background-color: rgba(#4f1, 0.3);
+        }
+
+        &--3 {
+            left: 50%;
+            background-color: rgba(#41f, 0.3);
+        }
+
+        &--4 {
+            left: 75%;
+            background-color: rgba(#fd4, 0.3);
+        }
+    }
+}
