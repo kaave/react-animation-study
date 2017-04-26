@@ -13,11 +13,12 @@
         height: 100%;
         top: 0;
         overflow: hidden;
-        border: {
-            left: solid 1px #f0f0f0;
-            right: solid 1px #f0f0f0;
-        }
+        border-left: solid 1px rgba(#f0f0f0, 0.5);
         cursor: pointer;
+
+        &:first-child {
+            border-left: 0;
+        }
 
         &--1 {
             left: 0;
@@ -43,22 +44,20 @@
 
 .grid-fade {
     &-enter {
-        animation: fade-in 0.5s ease-out;
+        animation: fade-in 0.6s cubic-bezier(0.87, 0, 0.265, 1);
     }
 
     &-leave {
-        animation: fade-out 0.5s ease-out;
+        animation: fade-out 0.6s cubic-bezier(0.87, 0, 0.265, 1);
     }
 }
 
 @keyframes fade-in {
     0% { width: 0; }
-    50% { width: 0; }
     100% { width: 25%; }
 }
 
 @keyframes fade-out {
     0% { width: 25%; }
-    50% { width: 25%; }
     100% { width: 0; }
 }
