@@ -7,8 +7,9 @@ import Grid from './Grid.jsx';
 
 type props = {
   handleButtonClick: () => void,
-  handleGridClick: () => void,
-  isGridOpened: boolean
+  handleGridClick: (index: number) => void,
+  isGridOpened: boolean,
+  selectedGridIndex: number | null
 };
 
 const grids = [
@@ -18,7 +19,7 @@ const grids = [
   'エスパルス曲線'
 ];
 
-export default function Top ({ handleButtonClick, handleGridClick, isGridOpened }: props) {
+export default function Top ({ handleButtonClick, handleGridClick, isGridOpened, selectedGridIndex }: props) {
   return (
     <div className="top">
       {!isGridOpened && (
@@ -26,7 +27,7 @@ export default function Top ({ handleButtonClick, handleGridClick, isGridOpened 
           <span className="fa fa-diamond" /> 遷移(予定) <span className="fa fa-diamond" />
         </button>
       )}
-      <Grid isOpened={isGridOpened} grids={grids} handleClick={handleGridClick} />
+      <Grid isOpened={isGridOpened} grids={grids} handleClick={handleGridClick} selectedIndex={selectedGridIndex} />
     </div>
   );
 }

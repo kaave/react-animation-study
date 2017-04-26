@@ -6,11 +6,13 @@ import { render } from 'react-dom';
 import Main from '../components/Main.jsx';
 
 type state = {
-  isGridOpened: boolean
+  isGridOpened: boolean,
+  selectedGridIndex: number | null
 };
 
 const initialState: state = {
-  isGridOpened: false
+  isGridOpened: false,
+  selectedGridIndex: null
 };
 
 class Renderer extends Component {
@@ -30,10 +32,17 @@ class Renderer extends Component {
     }));
   }
 
-  handleGridClick (_event: Event) {
-    this.setState(Object.assign({}, this.state, {
-      isGridOpened: false
-    }));
+  handleGridClick (index: number) {
+    if (this.state.selectedGridIndex === index) {
+      this.setState(Object.assign({}, this.state, {
+        selectedGridIndex: null,
+        isGridOpened: false
+      }));
+    } else {
+      this.setState(Object.assign({}, this.state, {
+        selectedGridIndex: index
+      }));
+    }
   }
 
   render () {
